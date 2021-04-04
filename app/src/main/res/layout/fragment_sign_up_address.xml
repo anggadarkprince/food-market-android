@@ -24,6 +24,7 @@
             android:text="Phone Number" />
 
         <EditText
+            android:id="@+id/etPhoneNumber"
             style="@style/Theme.FoodMarket.EditText.PoppinsNormal16Gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
             android:text="Address" />
 
         <EditText
+            android:id="@+id/etAddress"
             style="@style/Theme.FoodMarket.EditText.PoppinsNormal16Gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,6 +58,7 @@
             android:text="City" />
 
         <EditText
+            android:id="@+id/etCity"
             style="@style/Theme.FoodMarket.EditText.PoppinsNormal16Gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,6 +75,7 @@
             android:text="Country" />
 
         <EditText
+            android:id="@+id/etCountry"
             style="@style/Theme.FoodMarket.EditText.PoppinsNormal16Gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

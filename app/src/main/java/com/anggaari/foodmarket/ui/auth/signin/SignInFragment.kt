@@ -81,7 +81,7 @@ class SignInFragment : Fragment(), SignInContract.View {
     }
 
     override fun onLoginSuccess(loginResponse: LoginResponse) {
-        FoodMarket.getApp().setToken(loginResponse.access_token)
+        FoodMarket.getApp().setToken(loginResponse.accessToken)
         val json = Gson().toJson(loginResponse.user)
         FoodMarket.getApp().setUser(json)
 

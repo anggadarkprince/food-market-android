@@ -6,10 +6,10 @@ import com.google.gson.annotations.SerializedName
 data class LoginResponse(
     @Expose
     @SerializedName("access_token")
-    val access_token: String,
+    val accessToken: String,
     @Expose
     @SerializedName("token_type")
-    val token_type: String,
+    val tokenType: String,
     @Expose
     @SerializedName("user")
     val user: User

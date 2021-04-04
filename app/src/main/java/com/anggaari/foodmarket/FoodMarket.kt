@@ -33,7 +33,6 @@ class FoodMarket: MultiDexApplication() {
 
     fun setUser(user: String) {
         getPreferences().edit().putString("user", user).apply()
-        HttpClient.getInstance().buildRetrofitClient(user)
     }
 
     fun getUser(): String? {

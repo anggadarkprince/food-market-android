@@ -1,7 +1,10 @@
 package com.anggaari.foodmarket.network
 
+import android.util.Log
 import com.anggaari.foodmarket.BuildConfig
+import com.anggaari.foodmarket.FoodMarket
 import com.anggaari.foodmarket.utils.Helpers
+import com.readystatesoftware.chuck.ChuckInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -35,7 +38,7 @@ class HttpClient {
     }
 
     private fun buildRetrofitClient() {
-        val token = ""
+        val token = FoodMarket.getApp().getToken()
         buildRetrofitClient(token)
     }
 
@@ -48,10 +51,12 @@ class HttpClient {
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             builder.addInterceptor(interceptor)
+            builder.addInterceptor(ChuckInterceptor(FoodMarket.getApp()))
         }
 
         if (token != null) {
-            builder.addInterceptor(getInterceptorWithHeader("Authorization", "Bearer $token"))
+            Log.e("token", token);
+            builder.addInterceptor(getInterceptorWithHeader("Authorization", "Bearer ${token}"))
         }
 
         val okHttpClient = builder.build()
