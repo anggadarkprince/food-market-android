@@ -17,6 +17,7 @@ import com.anggaari.foodmarket.model.response.home.Data
 import com.anggaari.foodmarket.model.response.home.HomeResponse
 import com.anggaari.foodmarket.model.response.login.User
 import com.anggaari.foodmarket.ui.detail.DetailActivity
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -56,7 +57,12 @@ class HomeFragment : Fragment(), HomeAdapter.ItemAdapterCallback, HomeContract.V
         }
 
         val user = FoodMarket.getApp().getUser()
-        var userResponse = Gson().fromJson(user, User::class.java)
+        val userResponse = Gson().fromJson(user, User::class.java)
+        if (userResponse.profilePhotoUrl.isNotEmpty()) {
+            Glide.with(requireActivity())
+                .load(userResponse.profilePhotoUrl)
+                .into(ivProfile)
+        }
     }
 
     override fun onClick(v: View, data: Data) {

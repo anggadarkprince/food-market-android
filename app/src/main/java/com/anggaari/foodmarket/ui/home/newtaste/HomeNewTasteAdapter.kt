@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.anggaari.foodmarket.R
 import com.anggaari.foodmarket.model.response.home.Data
 import com.anggaari.foodmarket.utils.Helpers.formatPrice
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_home_vertical.view.*
 
 class HomeNewTasteAdapter (
@@ -35,9 +36,9 @@ class HomeNewTasteAdapter (
                 tvPrice.formatPrice(data.price)
                 rbRating.rating = data.rating
 
-                //Glide.with(context)
-                //    .load(data.src)
-                //    .into(ivPoster)
+                Glide.with(context)
+                    .load(data.imageUrl)
+                    .into(ivPoster)
 
                 itemView.setOnClickListener {
                     itemAdapterCallback.onClick(it, data)

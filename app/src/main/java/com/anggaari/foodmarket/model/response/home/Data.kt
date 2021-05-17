@@ -36,6 +36,10 @@ data class Data(
     val image: String,
 
     @Expose
+    @SerializedName("image_url")
+    val imageUrl: String,
+
+    @Expose
     @SerializedName("ingredients")
     val ingredients: String,
 
