@@ -2,26 +2,19 @@ package com.anggaari.foodmarket.ui.home.newtaste
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.anggaari.foodmarket.R
-import com.anggaari.foodmarket.model.dummy.HomeVerticalModel
+import com.anggaari.foodmarket.model.response.home.Data
 import com.anggaari.foodmarket.ui.detail.DetailActivity
-import com.anggaari.foodmarket.ui.home.SectionPagerAdapter
 import kotlinx.android.synthetic.main.fragment_home_new_taste.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeNewTasteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeNewTasteFragment : Fragment(), HomeNewTasteAdapter.ItemAdapterCallback {
-    private var foodList: ArrayList<HomeVerticalModel> = ArrayList()
+    private var newTasteList: ArrayList<Data>? = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,25 +27,15 @@ class HomeNewTasteFragment : Fragment(), HomeNewTasteAdapter.ItemAdapterCallback
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        initDataDummy()
+        newTasteList = arguments?.getParcelableArrayList("data")
 
-        var adapter = HomeNewTasteAdapter(foodList, this)
-        var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
+        val adapter = HomeNewTasteAdapter(newTasteList!!, this)
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
         rcList.layoutManager = layoutManager
         rcList.adapter = adapter
     }
 
-    fun initDataDummy() {
-        foodList = ArrayList()
-        foodList.add(HomeVerticalModel("Cherry Healty", "10000", "", 4f))
-        foodList.add(HomeVerticalModel("Burger Tamayo", "15000", "", 5f))
-        foodList.add(HomeVerticalModel("Nasi Goreng", "20000", "", 3.5f))
-        foodList.add(HomeVerticalModel("Cherry Healty", "10000", "", 4f))
-        foodList.add(HomeVerticalModel("Burger Tamayo", "15000", "", 5f))
-        foodList.add(HomeVerticalModel("Nasi Goreng", "20000", "", 3.5f))
-    }
-
-    override fun onClick(v: View, data: HomeVerticalModel) {
+    override fun onClick(v: View, data: Data) {
         val detail = Intent(activity, DetailActivity::class.java)
         startActivity(detail)
     }

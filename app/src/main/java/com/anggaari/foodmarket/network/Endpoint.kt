@@ -1,6 +1,7 @@
 package com.anggaari.foodmarket.network
 
 import com.anggaari.foodmarket.model.response.Wrapper
+import com.anggaari.foodmarket.model.response.home.HomeResponse
 import com.anggaari.foodmarket.model.response.login.LoginResponse
 import io.reactivex.Observable
 import okhttp3.MultipartBody
@@ -25,4 +26,7 @@ interface Endpoint {
     @Multipart
     @POST("user/photo")
     fun registerPhoto(@Part profileImage:MultipartBody.Part): Observable<Wrapper<Any>>
+
+    @GET("foods")
+    fun home(): Observable<Wrapper<HomeResponse>>
 }
