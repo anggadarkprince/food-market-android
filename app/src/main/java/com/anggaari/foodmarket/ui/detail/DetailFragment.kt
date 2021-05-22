@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import com.anggaari.foodmarket.R
 import com.anggaari.foodmarket.model.response.home.Data
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_detail.*
  * create an instance of this fragment.
  */
 class DetailFragment : Fragment() {
-    var bundle:Bundle ?= null;
+    var bundle:Bundle?= null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,11 +43,13 @@ class DetailFragment : Fragment() {
         }
 
         btnOrderNow.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_payment)
+            Navigation.findNavController(it).navigate(R.id.action_payment, bundle)
         }
     }
 
     private fun initView(data: Data?) {
+        bundle = bundleOf("data" to data)
+
         Glide.with(requireContext())
             .load(data?.imageUrl)
             .into(ivPoster)
@@ -55,6 +58,5 @@ class DetailFragment : Fragment() {
         tvDescription.text = data?.description
         tvIngredient.text = data?.ingredients
         tvTotal.formatPrice(data?.price.toString())
-
     }
 }

@@ -6,15 +6,15 @@ import com.google.gson.annotations.SerializedName
 data class User(
     @Expose
     @SerializedName("address")
-    val address: Any,
+    val address: String,
 
     @Expose
     @SerializedName("city")
-    val city: Any,
+    val city: String,
 
     @Expose
     @SerializedName("country")
-    val country: Any,
+    val country: String,
 
     @Expose
     @SerializedName("created_at")
@@ -38,11 +38,11 @@ data class User(
 
     @Expose
     @SerializedName("phone_number")
-    val phoneNumber: Any,
+    val phoneNumber: String,
 
     @Expose
     @SerializedName("profile_photo_path")
-    val profilePhotoPath: Any,
+    val profilePhotoPath: String,
 
     @Expose
     @SerializedName("profile_photo_url")
