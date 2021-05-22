@@ -33,8 +33,8 @@ class HomeNewTasteAdapter (
         fun bind(data: Data, itemAdapterCallback: ItemAdapterCallback) {
             itemView.apply {
                 tvTitle.text = data.foodName
-                tvPrice.formatPrice(data.price)
-                rbRating.rating = data.rating
+                tvPrice.formatPrice(data.price.toString())
+                rbRating.rating = data.rating ?: 0f
 
                 Glide.with(context)
                     .load(data.imageUrl)

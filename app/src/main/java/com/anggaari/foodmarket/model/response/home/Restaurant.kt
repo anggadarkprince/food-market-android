@@ -13,31 +13,31 @@ data class Restaurant(
 
     @Expose
     @SerializedName("created_at")
-    val createdAt: String,
+    val createdAt: String?,
 
     @Expose
     @SerializedName("deleted_at")
-    val deletedAt: String,
+    val deletedAt: String?,
 
     @Expose
     @SerializedName("description")
-    val description: String,
+    val description: String?,
 
     @Expose
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
 
     @Expose
     @SerializedName("lat")
-    val lat: Float,
+    val lat: Float?,
 
     @Expose
     @SerializedName("lng")
-    val lng: Float,
+    val lng: Float?,
 
     @Expose
     @SerializedName("restaurant_name")
-    val restaurantName: String,
+    val restaurantName: String?,
 
     @Expose
     @SerializedName("updated_at")

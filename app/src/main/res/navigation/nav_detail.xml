@@ -11,6 +11,9 @@
         tools:layout="@layout/fragment_detail">
         <action android:id="@+id/action_payment"
             app:destination="@+id/fragmentPayment"/>
+        <argument android:name="data"
+            app:argType="com.anggaari.foodmarket.model.response.home.Data"
+            app:nullable="true"/>
     </fragment>
 
     <fragment
@@ -19,6 +22,9 @@
         tools:layout="@layout/fragment_payment">
         <action android:id="@+id/action_payment_success"
             app:destination="@+id/fragmentPaymentSuccess"/>
+        <argument android:name="data"
+            app:argType="com.anggaari.foodmarket.model.response.home.Data"
+            app:nullable="true"/>
     </fragment>
 
     <fragment

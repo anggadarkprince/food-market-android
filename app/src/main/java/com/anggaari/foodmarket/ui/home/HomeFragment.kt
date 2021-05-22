@@ -66,15 +66,13 @@ class HomeFragment : Fragment(), HomeAdapter.ItemAdapterCallback, HomeContract.V
     }
 
     override fun onClick(v: View, data: Data) {
-        val bundle = Bundle()
-        bundle.putParcelable("data", data)
-        val detail = Intent(activity, DetailActivity::class.java).putExtras(bundle)
+        val detail = Intent(activity, DetailActivity::class.java).putExtra("data", data)
         startActivity(detail)
     }
 
     override fun onHomeSuccess(homeResponse: HomeResponse) {
         for (a in homeResponse.data.indices) {
-            val items: List<String> = homeResponse.data[a].types.split(",")
+            val items: List<String> = homeResponse.data[a].types!!.split(",")
             for (x in items.indices) {
                 when {
                     items[x].equals("new_food", true) -> {
