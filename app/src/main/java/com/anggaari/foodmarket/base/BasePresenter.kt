@@ -1,4 +1,4 @@
-package com.anggaari.foodmarket.model.base
+package com.anggaari.foodmarket.base
 
 interface BasePresenter {
     fun subscribe()

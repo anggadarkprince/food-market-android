@@ -1,8 +1,8 @@
 package com.anggaari.foodmarket.ui.auth.signup
 
 import android.net.Uri
-import com.anggaari.foodmarket.model.base.BasePresenter
-import com.anggaari.foodmarket.model.base.BaseView
+import com.anggaari.foodmarket.base.BasePresenter
+import com.anggaari.foodmarket.base.BaseView
 import com.anggaari.foodmarket.model.request.RegisterRequest
 import com.anggaari.foodmarket.model.response.login.LoginResponse
 

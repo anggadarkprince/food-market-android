@@ -4,6 +4,7 @@ import com.anggaari.foodmarket.model.response.Wrapper
 import com.anggaari.foodmarket.model.response.checkout.CheckoutResponse
 import com.anggaari.foodmarket.model.response.home.HomeResponse
 import com.anggaari.foodmarket.model.response.login.LoginResponse
+import com.anggaari.foodmarket.model.response.transaction.TransactionResponse
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import retrofit2.http.*
@@ -38,4 +39,10 @@ interface Endpoint {
                  @Field("quantity") quantity:String,
                  @Field("total") total:String,
                  @Field("status") status:String): Observable<Wrapper<CheckoutResponse>>
+
+    // transaction,
+    // Progress = on delivery
+    // Past order = delivered
+    @GET("transactions")
+    fun transaction(): Observable<Wrapper<TransactionResponse>>
 }

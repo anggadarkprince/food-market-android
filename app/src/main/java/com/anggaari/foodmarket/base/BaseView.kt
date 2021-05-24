@@ -1,4 +1,4 @@
-package com.anggaari.foodmarket.model.base
+package com.anggaari.foodmarket.base
 
 interface BaseView {
     fun showLoading()

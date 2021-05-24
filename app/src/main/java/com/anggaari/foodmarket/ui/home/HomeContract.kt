@@ -1,7 +1,7 @@
 package com.anggaari.foodmarket.ui.home
 
-import com.anggaari.foodmarket.model.base.BasePresenter
-import com.anggaari.foodmarket.model.base.BaseView
+import com.anggaari.foodmarket.base.BasePresenter
+import com.anggaari.foodmarket.base.BaseView
 import com.anggaari.foodmarket.model.response.home.HomeResponse
 
 interface HomeContract {
