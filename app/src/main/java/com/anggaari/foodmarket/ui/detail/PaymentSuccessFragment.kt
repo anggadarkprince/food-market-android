@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.anggaari.foodmarket.R
+import kotlinx.android.synthetic.main.fragment_payment_success.*
 
 /**
  * A simple [Fragment] subclass.
@@ -26,5 +27,12 @@ class PaymentSuccessFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         (activity as DetailActivity).toolbarDetail()
+
+        btnOtherFood.setOnClickListener {
+            requireActivity().finish()
+        }
+        btnMyOrder.setOnClickListener {
+            requireActivity().finish()
+        }
     }
 }
