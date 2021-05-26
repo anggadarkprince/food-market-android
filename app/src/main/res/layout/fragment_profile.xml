@@ -15,20 +15,24 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ivPicture"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_marginTop="26dp"
+            android:layout_marginBottom="5dp"
             android:src="@drawable/ic_picture_empty" />
 
         <TextView
+            android:id="@+id/tvName"
             style="@style/Theme.FoodMarket.TextView.PoppinsNormal18Dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="2dp"
             android:text="Angga Ari Wijaya" />
 
         <TextView
+            android:id="@+id/tvEmail"
             style="@style/Theme.FoodMarket.TextView.PoppinsNormal14Grey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
