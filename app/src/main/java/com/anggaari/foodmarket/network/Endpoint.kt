@@ -45,4 +45,10 @@ interface Endpoint {
     // Past order = delivered
     @GET("transactions")
     fun transaction(): Observable<Wrapper<TransactionResponse>>
+
+    // transaction update,
+    @FormUrlEncoded
+    @POST("transaction/{id}")
+    fun transactionUpdate(@Path(value = "id") userId:String,
+                          @Field("status") status: String): Observable<Wrapper<Any>>
 }

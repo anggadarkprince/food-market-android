@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.anggaari.foodmarket.R
 import com.anggaari.foodmarket.model.response.transaction.Data
+import com.anggaari.foodmarket.ui.order.detailsorders.OrdersDetailActivity
 import com.anggaari.foodmarket.ui.order.inprogress.PastOrdersAdapter
 import kotlinx.android.synthetic.main.fragment_pastorders.*
 
@@ -44,7 +45,7 @@ class PastOrderFragment : Fragment(), PastOrdersAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View?, data: Data) {
-        //val detail = Intent(activity, OrdersDetailActivity::class.java).putExtra("data", data)
-        //startActivity(detail)
+        val detail = Intent(activity, OrdersDetailActivity::class.java).putExtra("data", data)
+        startActivity(detail)
     }
 }

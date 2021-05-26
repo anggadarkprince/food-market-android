@@ -1,12 +1,10 @@
-package com.anggaari.foodmarket.model.response.transaction
+package com.anggaari.foodmarket.model.response
 
-import android.os.Parcelable
+
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-data class User(
+data class ProfileResponse(
     @Expose
     @SerializedName("address")
     val address: String,
@@ -17,11 +15,11 @@ data class User(
 
     @Expose
     @SerializedName("created_at")
-    val createdAt: Long,
+    val createdAt: String,
 
     @Expose
     @SerializedName("current_team_id")
-    val currentTeamId: String?,
+    val currentTeamId: Any,
 
     @Expose
     @SerializedName("email")
@@ -29,7 +27,7 @@ data class User(
 
     @Expose
     @SerializedName("email_verified_at")
-    val emailVerifiedAt: String?,
+    val emailVerifiedAt: Any,
 
     @Expose
     @SerializedName("country")
@@ -45,15 +43,15 @@ data class User(
 
     @Expose
     @SerializedName("phone_number")
-    val phoneNumber: String?,
+    val phoneNumber: String,
 
     @Expose
     @SerializedName("profile_photo_path")
-    val profilePhotoPath: String?,
+    val profilePhotoPath: String,
 
     @Expose
     @SerializedName("profile_photo_url")
-    val profilePhotoUrl: String?,
+    val profilePhotoUrl: String,
 
     @Expose
     @SerializedName("role")
@@ -61,5 +59,5 @@ data class User(
 
     @Expose
     @SerializedName("updated_at")
-    val updatedAt: Long?
-) : Parcelable
+    val updatedAt: String
+)

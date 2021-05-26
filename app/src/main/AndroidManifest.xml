@@ -23,6 +23,7 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.FoodMarket.NoActionBar">
         <activity android:name=".ui.detail.DetailActivity" />
+        <activity android:name=".ui.order.detailsorders.OrdersDetailActivity" />
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.auth.AuthActivity" />
         <activity android:name=".ui.splash.SplashScreenActivity">
